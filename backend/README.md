@@ -63,3 +63,8 @@ POST /users/register
 - Password is automatically hashed before storing
 - JWT token is generated upon successful registration
 - Email must be unique in the system
+
+
+#send the token in headers
+
+postman>>headers>>Authorization >> bearer {token} >> send
