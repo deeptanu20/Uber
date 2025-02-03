@@ -79,10 +79,12 @@ module.exports.getUserProfile=async(req,res,next)=>{
 }
 
 module.exports.logoutUser=async(req,res,next)=>{
-   res.clearCookie('token');
+   
    const token=req.cookies.token || req.headers.authorization?.split(' ')[ 1 ];
 
    await blackListToken.create({token});
+
+   res.clearCookie('token');
 
    res.status().json({message:'Logged out'});
 }
