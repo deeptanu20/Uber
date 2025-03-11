@@ -86,5 +86,5 @@ module.exports.logoutUser=async(req,res,next)=>{
 
    res.clearCookie('token');
 
-   res.status().json({message:'Logged out'});
+   res.status(200).json({message:'Logged out'});
 }
